@@ -9,7 +9,7 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 // `bun run build:static` sets STATIC_EXPORT=1 and builds .output with a Node
 // server, which the deploy workflow then uses to render the real index.html.
 // Everything in .output/public is pure static files for GitHub Pages.
-const staticExport = process.env.STATIC_EXPORT === "1";
+const staticExport = process.env["STATIC_EXPORT"] === "1";
 
 export default defineConfig({
   tanstackStart: {
