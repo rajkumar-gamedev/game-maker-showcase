@@ -24,6 +24,13 @@ jobs:
           bun-version: latest
       - run: bun install
       - run: bun run build:static
+      - name: Render static index.html
+        run: |
+          PORT=8081 node .output/server/index.mjs &
+          SERVER_PID=$!
+          for i in $(seq 1 30); do curl -sf -o /dev/null http://localhost:8081/ && break; sleep 1; done
+          curl -sf http://localhost:8081/ -o .output/public/index.html
+          kill $SERVER_PID
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
