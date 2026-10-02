@@ -12,4 +12,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Self-hosting: builds to .output/public (plain static files for GitHub Pages etc.).
+  // Inside Lovable builds LOVABLE_NITRO_PRESET (Cloudflare) takes precedence, so this only
+  // applies when you build yourself, e.g. `bun run build:static`.
+  nitro: { preset: "static" },
 });
