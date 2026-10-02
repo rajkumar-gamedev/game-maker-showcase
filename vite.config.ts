@@ -18,6 +18,6 @@ export default defineConfig({
     server: { entry: "server" },
   },
   // Inside Lovable builds LOVABLE_NITRO_PRESET (Cloudflare) takes precedence, so
-  // this only applies to the STATIC_EXPORT=1 self-hosting build.
-  nitro: staticExport ? { preset: "node-server" } : undefined,
+  // this only changes the STATIC_EXPORT=1 self-hosting build.
+  nitro: staticExport ? { preset: "node-server" } : true,
 });
