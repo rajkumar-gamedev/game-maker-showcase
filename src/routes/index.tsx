@@ -1,9 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import asteroidImage from "@/assets/asteroid.jpg";
 import csr2Image from "@/assets/csr2.jpg";
 import ghostRiderImage from "@/assets/ghost-rider.jpg";
 import krayonikArImage from "@/assets/krayonik-ar.jpg";
 import iterationToolImage from "@/assets/iteration-tool.jpg";
+import laserImage from "@/assets/laser.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -77,6 +79,54 @@ const projects: Project[] = [
   },
 ];
 
+type ItchGame = {
+  title: string;
+  url: string;
+  badge: string;
+  description: string;
+  tags: string;
+  image: string;
+};
+
+/* To add a new itch.io web game, append an entry here. */
+const itchGames: ItchGame[] = [
+  {
+    title: "Asteroid",
+    url: "https://rajkutitgmailcom.itch.io/asteroid",
+    badge: "HTML5",
+    description: "Made with Unity · runs in the browser.",
+    tags: "Unity · HTML5",
+    image: asteroidImage,
+  },
+  {
+    title: "Laser",
+    url: "https://rajkutitgmailcom.itch.io/laser",
+    badge: "HTML5",
+    description: "Made with Unity · runs in the browser.",
+    tags: "Unity · HTML5",
+    image: laserImage,
+  },
+  {
+    title: "Kitti Journey",
+    url: "https://rajkutitgmailcom.itch.io/kitti-journey-ggj-2025",
+    badge: "GGJ25",
+    description:
+      "A cat chasing floating bubbles · Global Game Jam 2025 entry.",
+    tags: "Puzzle · Unity · HTML5",
+    image:
+      "https://img.itch.zone/aW1nLzE5NTMwMTgwLnBuZw==/315x250%23c/2gv6I9.png",
+  },
+  {
+    title: "ToonBlast Test",
+    url: "https://rajkutitgmailcom.itch.io/toonblast-test",
+    badge: "PROTO",
+    description: "First Unity project · playable puzzle prototype.",
+    tags: "Puzzle · Unity · HTML5",
+    image:
+      "https://img.itch.zone/aW1nLzE5MzIzNTkwLnBuZw==/315x250%23c/m6j%2Bb0.png",
+  },
+];
+
 const stats = [
   { value: "12+", label: "Years shipped", highlight: true },
   { value: "5M+", label: "Downloads", highlight: false },
@@ -119,6 +169,7 @@ function Index() {
         <Header />
         <Hero />
         <Work />
+        <WebGames />
         <RuntimeLog />
         <Footer />
       </div>
@@ -135,11 +186,14 @@ function Header() {
           <a className="hover:text-hazard" href="#work">
             01 / Work
           </a>
+          <a className="hover:text-hazard" href="#games">
+            02 / Games
+          </a>
           <a className="hover:text-hazard" href="#log">
-            02 / Log
+            03 / Log
           </a>
           <a className="hover:text-hazard" href="#contact">
-            03 / Contact
+            04 / Contact
           </a>
         </nav>
         <span className="hidden sm:flex items-center gap-2 text-bone">
