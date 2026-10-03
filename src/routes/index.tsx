@@ -311,15 +311,75 @@ function Work() {
   );
 }
 
+function WebGames() {
+  return (
+    <section
+      id="games"
+      className="max-w-6xl mx-auto px-5 py-12 border-t border-line scroll-mt-12"
+    >
+      <div className="flex items-baseline justify-between mb-8">
+        <h2 className="font-display text-3xl uppercase tracking-tight">
+          02 / Web Games
+        </h2>
+        <a
+          href="https://rajkutitgmailcom.itch.io"
+          target="_blank"
+          rel="noreferrer"
+          className="font-mono text-[10px] uppercase tracking-[0.2em] text-dim hover:text-hazard transition-colors"
+        >
+          ▸ all games on itch.io
+        </a>
+      </div>
+      <div className="grid md:grid-cols-2 gap-px bg-line border border-line">
+        {itchGames.map((game) => (
+          <a
+            key={game.title}
+            href={game.url}
+            target="_blank"
+            rel="noreferrer"
+            className="group bg-panel p-6 flex flex-col hover:bg-[oklch(0.23_0_0)] transition-colors"
+          >
+            <div className="w-full aspect-[16/9] overflow-hidden outline-1 -outline-offset-1 outline-white/5 rounded-[min(1vw,10px)]">
+              <img
+                src={game.image}
+                alt={game.title}
+                loading="lazy"
+                width={1088}
+                height={608}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="flex items-center justify-between mt-4">
+              <h3 className="font-display text-2xl uppercase">{game.title}</h3>
+              <span className="font-mono text-[10px] text-hazard font-bold">
+                {game.badge}
+              </span>
+            </div>
+            <p className="text-sm text-dim mt-1 text-pretty">
+              {game.description}
+            </p>
+            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-dim mt-3">
+              {game.tags} ·{" "}
+              <span className="text-hazard group-hover:underline">
+                play in browser ↗
+              </span>
+            </p>
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function RuntimeLog() {
   return (
     <section
       id="log"
       className="max-w-6xl mx-auto px-5 py-12 border-t border-line scroll-mt-12"
     >
-      <h2 className="font-display text-3xl uppercase tracking-tight mb-8">
-        02 / Runtime Log
-      </h2>
+        <h2 className="font-display text-3xl uppercase tracking-tight mb-8">
+          03 / Runtime Log
+        </h2>
       <ol className="border-l-2 border-line ml-2">
         {timeline.map((entry) => (
           <li key={entry.org} className="pl-6 py-4 relative">
