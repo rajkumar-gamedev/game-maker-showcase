@@ -423,7 +423,7 @@ function Footer() {
       </h2>
       <div className="mt-8 flex flex-wrap gap-3 font-mono text-sm uppercase tracking-[0.1em]">
         <a
-          href="mailto:mmanikindirajkumar@gmail.com"
+          href="mailto:connect@rajkumargamedev.com"
           className="bg-hazard text-void font-bold px-5 py-3 hover:bg-bone transition-colors"
         >
           ▸ Email
