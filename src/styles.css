@@ -163,3 +163,86 @@
   );
   animation: scan 1.2s steps(12) infinite;
 }
+
+@keyframes screen-in {
+  0% { opacity: 0; clip-path: inset(48% 0 48% 0); filter: brightness(2); }
+  60% { opacity: 1; clip-path: inset(0 0 0 0); }
+  100% { filter: none; }
+}
+
+@keyframes glitch {
+  0%, 100% { transform: none; text-shadow: 0.06em 0.06em 0 var(--hazard); }
+  20% { transform: translateX(-3px); text-shadow: -0.04em 0.06em 0 var(--hazard); }
+  40% { transform: translateX(3px); }
+  60% { transform: none; }
+}
+
+@keyframes meter {
+  from { transform: scaleY(0.1); opacity: 0.2; }
+  to { transform: none; opacity: 1; }
+}
+
+@utility screen-in {
+  animation: screen-in 0.35s cubic-bezier(0.32, 0.72, 0, 1) both;
+}
+
+@utility logo-shadow {
+  text-shadow: 0.06em 0.06em 0 var(--hazard);
+}
+
+@utility glitch {
+  animation: rise 0.6s cubic-bezier(0.32, 0.72, 0, 1) both, glitch 0.5s steps(4) 0.8s 1;
+}
+
+@utility meter-seg {
+  animation: meter 0.3s steps(3) both;
+}
+
+@utility vignette {
+  background: radial-gradient(ellipse at center, transparent 55%, color-mix(in oklab, var(--void) 85%, transparent) 100%);
+}
+
+@utility crt-grid {
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--line) 50%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--line) 50%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: center;
+}
+
+@utility menu-panel {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  &.is-active,
+  &:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 8px 8px 0 var(--bone);
+  }
+}
+
+@utility level-card {
+  transition: border-color 0.15s ease, transform 0.15s ease;
+  &:hover {
+    border-color: var(--hazard);
+    transform: translateY(-3px);
+  }
+}
+
+@utility cabinet {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  &:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 var(--hazard);
+  }
+}
+
+@utility start-btn {
+  box-shadow: 6px 6px 0 color-mix(in oklab, var(--hazard) 35%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
