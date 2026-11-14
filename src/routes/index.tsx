@@ -175,7 +175,7 @@ function Hud({ screen, onHome }: { screen: Screen; onHome: () => void }) {
 function TitleScreen({ onStart }: { onStart: () => void }) {
   return (
     <div className="crt-grid min-h-[100svh] flex flex-col items-center justify-center text-center px-4 pt-14 pb-8">
-      <p className="rise font-mono text-[11px] uppercase tracking-[0.4em] text-dim">© 2013–2026 · A Bengaluru Production</p>
+      <p className="rise font-mono text-[11px] uppercase tracking-[0.4em] text-dim">© 2013–2026 · I write gameplay</p>
       <h1
         className="rise font-display uppercase leading-[0.82] tracking-tight text-[clamp(3.6rem,16vw,13rem)] mt-6"
         style={{
