@@ -57,20 +57,61 @@ const hiScores = [
 ];
 
 const stages = [
-  { n: 4, period: "2018 — NOW", org: "Zynga · CSR2", role: "Senior Gameplay Programmer", points: ["Live drag racing for millions of players", "Unity scripting tool that cut design iteration time by 50%", "Company hackathon winner"], current: true },
-  { n: 3, period: "2016 — 2018", org: "Krayonik", role: "Lead · AR Education", points: ["Led AR education apps where students interact with 3D models"], current: false },
-  { n: 2, period: "2014 — 2016", org: "Integer Production", role: "Game Developer", points: ["Ghost Rider — 5M+ downloads, 4-star", "High Speed Racer · Stick Man Sniper · American Sniper"], current: false },
-  { n: 1, period: "2013 — 2014", org: "Constraint Global Solutions", role: "Chennai", points: ["Shark Strike on iOS"], current: false },
+  {
+    n: 4,
+    period: "Dec 2018 — Now",
+    org: "Zynga · CSR2",
+    role: "Senior Gameplay Programmer",
+    points: [
+      "Shipped 5 live-ops features: Shift Spin, Race Pass, and Piggy Bank",
+      "Cut game asset size by 200 MB",
+      "Unity tool that cut design iteration time by 50%",
+      "On-call hotfixes for live features",
+      "Mentored interns into full-time roles · hackathon winner",
+    ],
+    current: true,
+  },
+  {
+    n: 3,
+    period: "Mar 2016 — Dec 2018",
+    org: "Krayonik",
+    role: "Senior Game Developer",
+    points: ["Led AR for an education app where students interact with 3D models"],
+    current: false,
+  },
+  {
+    n: 2,
+    period: "Nov 2014 — Mar 2016",
+    org: "Integer Production",
+    role: "Game Developer",
+    points: [
+      "Ghost Rider — 5M+ downloads, 4-star, top-grossing title",
+      "High Speed Racer, Stickman Sniper, and American Sniper — gameplay, controls, and AI",
+    ],
+    current: false,
+  },
+  {
+    n: 1,
+    period: "May 2013 — Nov 2014",
+    org: "Constraint Global Solutions",
+    role: "Junior Game Developer · Chennai",
+    points: [
+      "Built and published Shark Strike on the iOS App Store",
+      "Player controls, enemy behavior, scoring, and 2D animation",
+    ],
+    current: false,
+  },
 ];
 
 const education = [
-  { period: "2012 — 2013", title: "Postgraduate Diploma", place: "ICAT, Bengaluru" },
+  { period: "May 2012 — May 2013", title: "Postgraduate Diploma", place: "ICAT, Bengaluru" },
   { period: "2008 — 2012", title: "B.Tech", place: "St. Johns College of Engineering and Technology, Kurnool" },
 ];
 
 const powerUps = [
   { label: "Unity 3D", level: 10 },
-  { label: "Gameplay scripting", level: 10 },
+  { label: "C# gameplay", level: 10 },
+  { label: "Live ops", level: 9 },
   { label: "Unity tools", level: 9 },
   { label: "Android", level: 9 },
   { label: "iOS", level: 8 },
